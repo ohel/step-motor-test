@@ -1,0 +1,6 @@
+{
+  "ssid": "wifi",
+  "password": "wifi",
+  "ip": "0.0.0.0",
+  "ap": false
+}
