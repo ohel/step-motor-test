@@ -15,7 +15,7 @@ def getFileBytes(filename: str, append_zero_byte: bool = False):
 def createHeaderFile(file_in: str, file_out, var_name: str, append_zero_byte: bool = False):
     bytes = getFileBytes(file_in, append_zero_byte)
     str_out = 'namespace WebConfig {\n'
-    str_out += 'unsigned char ' + var_name + '_bytes[] = {'
+    str_out += 'byte ' + var_name + '_bytes[] = {'
     # The 12 bytes per line is just for nice output.
     bytecount = 12
     for byte in bytes:

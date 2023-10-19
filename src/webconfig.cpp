@@ -74,6 +74,12 @@ namespace WebConfig {
             Serial.println("GET: /");
             _server.send(200, "text/html", index_html);
         });
+
+        _server.on("/favicon.ico", HTTP_GET, [](){
+            Serial.println("GET: /favicon.ico");
+            _server.send_P(200, "image/x-icon", favicon, sizeof(favicon_bytes));
+        });
+
         _server.on("/", HTTP_POST, [](){
             Serial.println("POST: /");
             _server.send(200, "text/plain", "");
