@@ -30,7 +30,9 @@ static void rotate(String direction) {
 
 void setupWifi() {
     IPAddress subnet(255, 255, 255, 0);
-    bool is_ap = _wifi_gateway.toString() == "0.0.0.0";
+    bool is_ap =
+        _wifi_ip.toString() != "0.0.0.0" &&
+        _wifi_gateway.toString() == "0.0.0.0";
 
     Serial.println("");
     if (is_ap) {
