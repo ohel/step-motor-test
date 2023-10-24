@@ -19,8 +19,8 @@ namespace WebConfig {
 
         IPAddress subnet(255, 255, 255, 0);
         bool is_ap =
-            _wifi_ip != INADDR_NONE &&
-            _wifi_gateway == INADDR_NONE;
+            _wifi_ip.toString() != INADDR_NONE.toString() &&
+            _wifi_gateway.toString() == INADDR_NONE.toString();
 
         // Note: here WiFi setup only as AP or STA, not both (WIFI_AP_STA).
 
@@ -43,7 +43,7 @@ namespace WebConfig {
             WiFi.softAPConfig(_wifi_ip, _wifi_ip, subnet);
         } else {
             WiFi.mode(WIFI_STA);
-            if (_wifi_ip == INADDR_NONE) {
+            if (_wifi_ip.toString() == INADDR_NONE.toString()) {
                 Serial.println("Using dynamic IP address.");
             } else {
                 WiFi.config(_wifi_ip, _wifi_gateway, subnet);
